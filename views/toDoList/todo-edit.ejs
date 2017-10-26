@@ -1,0 +1,22 @@
+<% include ../partials/boilerplate %>
+
+<div class="myForm">
+  <div class="edit">
+    <form action="/todos/<%= todo.id%>?_method=PUT" method="POST">
+      <input
+        type="text"
+        name="title"
+        placeholder="title"
+        value="<%= todo.description %>" />
+      <input
+        type="text"
+        name="done"
+        placeholder="done"
+        value="<%= parseInt(todo.done) %>" />
+      <input type="submit" value="Edit it!" />
+    </div>
+  </form>
+
+  <a href="/todos/<%=todo.id %>">Back to list</a>
+</div>
+<% include ../partials/end %>

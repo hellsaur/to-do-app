@@ -1,5 +1,5 @@
 .home{
-background-color: #FFF7C9;
+background-color: black;
 display: flex;
 align-items: center;
 justify-content: center;
@@ -8,10 +8,64 @@ min-height: 100vh;
 }
 
 .home h1 {
+  color:white;
   font-size: 5em;
   max-width: 50%;
   line-height: 1.4em;
   text-align: center;
   text-transform: uppercase;
   font-style: italic;
+  font-family:'Futura';
+}
+
+#btn{
+  height: 30px;
+  width: 50px;
+  color:red;
+  background-color: white;
+}
+
+header {
+  display: flex;
+  box-sizing: border-box;
+  justify-content: space-around;
+  padding: 10px 50px;
+  border-bottom: 3px solid blue;
+  text-decoration: none;
+}
+
+header nav ul {
+  display: flex;
+  box-sizing: border-box;
+  margin:2px;
+  text-decoration: none;
+}
+a {
+  text-decoration: none;
+
+}
+
+.logo {
+  font-family: 'Futura';
+  font-size: 2em;
+  text-transform: uppercase;
+  font-weight: 900;
+  box-sizing: border-box;
+  font-style: italic;
+}
+
+.todo{
+  font-family:'Futura';
+  box-sizing: border-box;
+  padding:10px;
+  font-size: 30px;
+
+}
+h1{
+  color:white;
+  text-align: center;
+}
+footer{
+  height: 100px;
+  background-color:blue;
 }
