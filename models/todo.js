@@ -13,34 +13,38 @@ Todo.findById = (id) => {
     `, [id]);
 };
 
-Todo.create = todo => db.one(`
+Todo.create = (todo) => {
+  return db.one(`
 INSERT INTO task (
   title,
   description,
   done)
   VALUES(
-  $/title/,
-  $/description/,
-  $/done/
-) RETURNING *`,todo);
+  $1,$2,$3
+) RETURNING *`,
+[todo.title, todo.description, todo.done,]);
 
-Todo.delete = id =>
+}
+
+
+
+Todo.update = (todo, id) => {
+    return db.none(`
+      UPDATE task SET
+      title=$1,
+      description=$2,
+      done=$3
+      WHERE
+      id=$4
+      RETURNING *`,
+        [todo.title, todo.description, todo.done, id]);
+
+}
+
+
+
+Todo.destroy = id =>
 db.none(`DELETE FROM task WHERE id = $1`, id)
-
-Todo.update = (todo, id) =>
-db.none(`
-UPDATE task SET
-title=$1,
-description=$2,
-done=$3
-WHERE
-id=$4
-RETURNING *`,
-[todo.title, todo.description, todo.done, id]);
-
-
-
-
 
 
 module.exports = Todo;

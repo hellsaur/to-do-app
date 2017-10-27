@@ -18,15 +18,9 @@ min-height: 100vh;
   font-family:'Futura';
 }
 
-#btn{
-  height: 30px;
-  width: 50px;
-  color:red;
-  background-color: white;
 
-}
 
-header {
+/*header {
   display: flex;
   box-sizing: border-box;
   justify-content: space-around;
@@ -40,12 +34,39 @@ header nav ul {
   box-sizing: border-box;
   margin:2px;
   text-decoration: none;
+}*/
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+
 }
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+    color:white;
+}
+
 a {
   text-decoration: none;
 
 }
-
+span{
+  color:blue;
+}
 .logo {
   font-family: 'Futura';
   font-size: 2em;
@@ -67,17 +88,22 @@ h1{
   text-align: center;
 }
 footer{
+  position:fixed;
+  top:90%;
+  width: 100%;
   height: 100px;
   background-color:blue;
 }
-button{
+.button{
   color:red;
+  margin:5px;
+  background-color: white;
   border: 2px solid black;
   border-radius: 20px;
   transition: 0.3s;
   padding: 10px;
 }
-button:hover{
+.button:hover{
   cursor:pointer;
   transform: scale(1.3);
   transition: 0.3s;

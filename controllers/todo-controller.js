@@ -31,7 +31,7 @@ todoController.create = (req, res) => {
   Todo.create({
     title: req.body.title,
     description: req.body.description,
-    done: req.body.done
+    done: req.body.done,
   }).then((todo) => {
     res.redirect(`/todo/${todo.id}`)
   }).catch(err => {
@@ -41,13 +41,13 @@ todoController.create = (req, res) => {
 };
 
 todoController.update = (req, res) => {
-  Todo.update(
-    [ req.body.title,
-      req.body.description,
-      req.body.done,
-      req.body.id])
+  Todo.update({
+      title: req.body.title,
+      description: req.body.description,
+      done: req.body.done,
+    }, req.params.id)
       .then((todo)=>{
-        res.redirect('back')
+        res.redirect(`/todo/${todo.id}`)
       }).catch(err => {
         console.log(err)
         res.status(500).json(err)
@@ -67,11 +67,15 @@ todoController.edit = (req, res) => {
 
 
 todoController.delete = (req,res) => {
-  Todo.delete(req.params.id).then(
-    res.redirect('/todo')).catch(err => {
-      console.log(500).json(err)
-    });
+  Todo.destroy(req.params.id)
+  .then(()=>{
+    res.redirect('/todo');
+  }).catch(err =>{
+    console.log(err);
+    res.status(500).json(err)
+  });
 };
+
 
 
 
