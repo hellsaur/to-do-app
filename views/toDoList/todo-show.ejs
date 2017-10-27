@@ -2,18 +2,18 @@
 <% include ../partials/boilerplate %>
 
 <div class="todo-container">
-  <div class="flashcard">
+  <div class="list">
     <p class="title"><%= todo.title %></p>
     <h3><%= todo.description %></h3>
     <div class="meta">
       <span class="done"><%= todo.done %></span>
 
-      <a class="edi" href="/todos/<%=todo.id%>/edit">Edit</a>
-      <form class="delete" action="/todos/<%= todo.id%>?_method=DELETE" method="POST">
-        <input class="dellink" type="submit" value="Delete">
+      <a class="edit" href="/todos/<%=todo.id%>/edit">Edit</a>
+      <form class="delete" action="/todo/<%= todo.id%>?_method=DELETE" method="POST">
+        <input class="button" type="submit" value="Delete">
       </form>
     </div>
-    <a class="linktosingle" href="/todo">Back to the list</a>
+    <a class="button" href="/todo">Back to the list</a>
   </div>
 </div>
 

@@ -2,12 +2,16 @@
 <div class="todo-container">
       <% todos.forEach(todo => { %>
       <div class="todo">
-      <span>Title: <%= todo.title %></span><br>
-      <span>Description: <%= todo.description %></span></br>
-      <span>Completed:  <%= todo.done %></span></br>
-      <button>info</button>
-      <button>edit</button>
-      <button>delete</button><br><br>
+      <span>Title:</span> <%= todo.title %><br>
+      <span>Description:</span> <%= todo.description %></br>
+      <span>Completed: </span> <%= todo.done %></br>
+      <form class="delete" action="/todo/<%= todo.id%>?_method=DELETE" method="POST">
+        <button class="button" type="submit">delete</button></form>
+        <a class="button" href="/todo/<%= todo.id%>/edit">edit</a></form>
+
+        <a class="button" href="/todo/<%= todo.id%>">info</a>
+
+
       </div>
 
       <% }) %>

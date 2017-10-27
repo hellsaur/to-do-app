@@ -2,21 +2,14 @@
 
 <div class="myForm">
   <div class="edit">
-    <form action="/todos/<%= todo.id%>?_method=PUT" method="POST">
-      <input
-        type="text"
-        name="title"
-        placeholder="title"
-        value="<%= todo.description %>" />
-      <input
-        type="text"
-        name="done"
-        placeholder="done"
-        value="<%= parseInt(todo.done) %>" />
-      <input type="submit" value="Edit it!" />
+    <form method="POST" action='/todo/<%= todo.id%>?_method=PUT'>
+      <input type="text" name="title" placeholder="title" value="<%= todo.title %>" />
+      <input type="text" name="description" placeholder="description" value="<%= todo.description %>" />
+      <input type="text" name="done" placeholder="done" value="<%= parseInt(todo.done) %>" />
+      <input class="button" type="submit" value="Edit it!" />
     </div>
   </form>
 
-  <a href="/todos/<%=todo.id %>">Back to list</a>
+  <a href="/todo/<%=todo.id %>">Back to list</a>
 </div>
 <% include ../partials/end %>
